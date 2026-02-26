@@ -2,8 +2,7 @@ package com.cursogetafe;
 
 import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GestorPeliculasTest {
     @BeforeAll
@@ -18,7 +17,9 @@ public class GestorPeliculasTest {
 
     @Test
     public void test1() {
-
+        GestorPeliculas gp = new GestorPeliculas();
+        gp.addPelicula(new Pelicula("Título", "Director", "Género", 1900));
+        assertEquals(1, gp.getPeliculas().size());
     }
 
     @AfterEach
